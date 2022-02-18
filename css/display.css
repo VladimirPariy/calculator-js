@@ -1,0 +1,30 @@
+.display {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  height: 100px;
+  background: rgb(238, 174, 202);
+  background: radial-gradient(
+    circle,
+    rgba(238, 174, 202, 1) 0%,
+    rgba(148, 187, 233, 1) 100%
+  );
+  margin: 5px;
+}
+.first-display-floor {
+  flex: 1 1 70%;
+  font-size: 60px;
+  padding: 0 13px;
+  display: flex;
+  align-items: center;
+}
+.second-display-floor {
+  flex: 1 1 30%;
+  font-size: 30px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #111;
+}
+

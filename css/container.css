@@ -1,0 +1,25 @@
+body {
+  background: rgb(131, 58, 180);
+  background: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(246, 176, 76, 1) 89%
+  );
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px;
+}
+
+.main__calculator {
+  display: flex;
+  flex-direction: column;
+  height: 510px;
+  width: 300px;
+  background-color: rgb(53, 53, 53);
+  box-shadow: 0 10px 27px;
+}
