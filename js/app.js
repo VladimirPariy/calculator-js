@@ -15,20 +15,17 @@ btnContainer.addEventListener('click', (event) => {
     if (event.target.classList.contains('number')) {
 
         if (sign.length === 0 && secondVar.length === 0) {
-            console.log(1)
             firstVar += pressedButton;
             firstVarCharCheck();
             showOnFirstDisplay(firstVar);
             showOnSecondDisplay(firstVar);
         } else if (checkFirstAndSecondVar && sum.length !== 0) {
-            console.log(2)
             secondVar = pressedButton;
             secondVarCharCheck();
             sum = '';
             showOnFirstDisplay(secondVar);
             showOnSecondDisplay(firstVar + sign + secondVar);
         } else {
-            console.log(3)
             secondVar += pressedButton;
             secondVarCharCheck();
             showOnFirstDisplay(secondVar);
@@ -63,11 +60,46 @@ btnContainer.addEventListener('click', (event) => {
             clear();
             showOnFirstDisplay('Error');
         }
+        secondVar = ''
+        sum = ''
     }
 
     if (event.target.classList.contains('delete')) {
         clear();
     }
+
+    if (event.target.classList.contains('backspace')) {
+        if (!secondVar && !sign) {
+            firstVar = firstVar.toString()
+            firstVar = firstVar.substring(0, firstVar.length - 1)
+            showOnFirstDisplay(firstVar);
+            showOnSecondDisplay(firstVar);
+
+            if (!firstVar) {
+                firstVar = '0'
+                showOnFirstDisplay(firstVar);
+                showOnSecondDisplay(firstVar);
+            }
+        }
+        if (!secondVar && sign) {
+            sign = ''
+            showOnFirstDisplay(firstVar)
+            showOnSecondDisplay(firstVar);
+        }
+        if (secondVar) {
+            secondVar = secondVar.substring(0, secondVar.length - 1);
+            showOnFirstDisplay(secondVar)
+            showOnSecondDisplay(firstVar + sign + secondVar)
+            if (!secondVar) {
+                showOnFirstDisplay(firstVar)
+            }
+        }
+    }
+
+    console.log(`firstVar: ${firstVar}
+    secondVar: ${secondVar}
+    sign: ${sign}
+    `)
 })
 
 function clear() {
@@ -143,7 +175,7 @@ function secondVarCharCheck() {
         }
     }
 
-    
+
 
 }
 

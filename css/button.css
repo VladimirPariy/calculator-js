@@ -13,12 +13,6 @@
   grid-column-start: 1;
   grid-column-end: 3;
 }
-.sum {
-  grid-column-start: 4;
-  grid-column-end: 5;
-  grid-row-start: 4;
-  grid-row-end: 6;
-}
 .zero {
   grid-column-start: 1;
   grid-column-end: 3;
